@@ -35,6 +35,17 @@ public abstract class Rekening {
         saldo -= bedrag;
     }
 
+
+
+
+
+
+
+
+
+
+
+
     protected void setRekeningNummer() {
     gebruikteRekeningNummers.add(genereerUniekRekeningNummer());    }
 
