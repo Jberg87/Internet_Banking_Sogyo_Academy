@@ -5,10 +5,23 @@ package nl.sogyo.jesper;
  */
 public abstract class Rekening {
 
-    private int rekeningNummer;
+    protected int rekeningNummer;
+    protected int saldo;
+    protected Klant eigenaar;
 
-//    public abstract void openRekening(Klant klant, int gestortBedrag);
-    public abstract void geldOvermaken(int bedrag);
+    public Klant getEigenaar() {
+        return eigenaar;
+    }
 
+    public int getSaldo() {
+        return saldo;
+    }
 
+    public void ontvang (int bedrag) {
+        saldo += bedrag;
+    }
+
+    public void schrijfAf(int bedrag) {
+       saldo -= bedrag;
+    }
 }
