@@ -9,8 +9,11 @@ public class BetaalRekening extends Rekening {
     private String pincode;
     private boolean heeftMaandPositiefGestaan;
 
-    public BetaalRekening (Klant klant) {
+
+    public BetaalRekening(Klant klant) {
         eigenaar = klant;
         saldo = 0;
+        Transactie transactie = new Transactie(0, null, this);
+        recordArrayList.add(new Record(getEigenaar(),getSaldo(), transactie));
     }
 }
