@@ -1,10 +1,13 @@
 package nl.sogyo.jesper;
 
+import java.util.ArrayList;
+
 /**
  * Created by Jesper on 25-7-2014.
  */
 public class Klant {
     private BetaalRekening betaalRekening;
+    private ArrayList<SpaarRekening> spaarRekeningen = new ArrayList<SpaarRekening>();
 
     public void openBetaalRekening () {
         if (this.betaalRekening == null) {
@@ -12,6 +15,10 @@ public class Klant {
         } else {
             System.out.println("Klant heeft al een betaalrekening");
         }
+    }
+
+    public void openSpaarRekening() {
+        spaarRekeningen.add(new SpaarRekening());
     }
 
 
@@ -48,5 +55,9 @@ public class Klant {
         } else {
             System.out.println("De storter is niet de eigenaar van de opgegegven rekening");
         }
+    }
+
+    public SpaarRekening getSpaarRekening(int nsteSpaarRekening) {
+        return spaarRekeningen.get(nsteSpaarRekening);
     }
 }
